@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">فروشگاه آنلاین</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">محصولات</a></li>
+          <li class="cardshop"><a href="#">سبد خرید</a></li>
+          <li><a href="#">تماس با ما</a></li>
+          <li><a href="#">درباره ما</a></li>
+          <li><a href="#">ثبت نام / ورود</a></li>
+          <div class="cart-container">
+            <p class="ptag">X</p>
+          </div>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="slider">
+      <img
+        src="https://dkstatics-public.digikala.com/digikala-static/ca6fb16d8c7231f33b30bc53aa989e2edb2c53ce_1705736890.jpg"
+        alt="محصول 1"
+        class="slide"
+      />
+      <img
+        src="https://dkstatics-public.digikala.com/digikala-static/543bc156547fb021335429579e0423e7e5d0aa9d_1703507358.jpg"
+        alt="محصول 2"
+        class="slide"
+      />
+      <img
+        src="https://dkstatics-public.digikala.com/digikala-static/fc6bb930592641b6708f867ebbdfcb59fb5fd8da_1713338714.jpg"
+        alt="محصول 3"
+        class="slide"
+      />
+    </div>
+
+    <section class="products"></section>
+
+    <footer>
+      <p>&copy; 2024 فروشگاه آنلاین. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script type="module" src="javascript.js"></script>
+    <script type="module" src="products.js"></script>
+  </body>
+</html>

@@ -249,19 +249,59 @@ function increaseQuantity(productId) {
 }
 
 function displayCart() {
-  // انتخاب عنصر سبد خرید
-  const cartContainer = document.querySelector(".cart-container");
-  cartContainer.innerHTML = ""; // پاک‌سازی سبد خرید
+  bascet.innerHTML = ""; // پاک کردن محتوای قبلی
+  cart.forEach((item) => {
+    const cartItem = `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" />
+        <div class="item-info">
+          <h3>${item.name}</h3>
+          <p>${item.price}</p>
+          <div class="quantity-controls">
+            <button class="decrease-qty" data-id="${item.id}">-</button>
+            <span>${item.quantity}</span>
+            <button class="increase-qty" data-id="${item.id}">+</button>
+          </div>
+        </div>
+      </div>
+    `;
+    bascet.innerHTML += cartItem;
+  });
 
-  if (cart.length === 0) {
-    cartContainer.innerHTML =
-      "<p class='null'>سبد خرید خالی است</p> <p class='closed'>X</p>";
-    const closedButton = cartContainer.querySelector(".closed");
-    closedButton.addEventListener("click", () => {
-      bascet.style.opacity = "0";
-    });
-    return;
+  function updateQuantity(productId, action) {
+    const productIndex = cart.findIndex((item) => item.id == productId);
+    if (productIndex !== -1) {
+      if (action === "increase") {
+        cart[productIndex].quantity += 1;
+      } else if (action === "decrease") {
+        cart[productIndex].quantity = Math.max(
+          1,
+          cart[productIndex].quantity - 1
+        ); // حداقل مقدار 1
+      }
+      saveCartToLocalStorage(); // ذخیره به روز رسانی در localStorage
+      displayCart(); // به روز رسانی نمایش سبد خرید
+    }
   }
+
+  const increaseButtons = document.querySelectorAll(".increase-qty");
+  const decreaseButtons = document.querySelectorAll(".decrease-qty");
+
+  console.log(increaseButtons, decreaseButtons);
+
+  increaseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.getAttribute("data-id");
+      updateQuantity(productId, "increase");
+    });
+  });
+
+  decreaseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.getAttribute("data-id");
+      updateQuantity(productId, "decrease");
+    });
+  });
 
   // ایجاد و نمایش محصولات موجود در سبد خرید
   cart.forEach((product) => {

@@ -3,7 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="contant.css" />
+    <title>تماس با ما- فروشگاه لپ‌تاپ</title>
   </head>
-  <body></body>
+  <body>
+    <header></header>
+      <h1>تماس با ما</h1>
+    </header>
+
+    <div class="container">
+      <!-- Contact Header -->
+      <div class="contact-header">
+        <h2>با ما در تماس باشید</h2>
+        <p>در هر زمان می‌توانید از طریق فرم زیر و اطلاعات تماس با ما ارتباط برقرار کنید.</p>
+        <a href="index.html">صفحه اصلی</a>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="contact-section">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3>فرم تماس</h3>
+          <form>
+            <label for="name">نام شما:</label>
+            <input type="text" id="name" name="name" placeholder="نام خود را وارد کنید" required />
+
+            <label for="email">ایمیل شما:</label>
+            <input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید" required />
+
+            <label for="message">پیام شما:</label>
+            <textarea id="message" name="message" rows="5" placeholder="پیام خود را وارد کنید" required></textarea>
+
+            <button type="submit">ارسال پیام</button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3>اطلاعات تماس</h3>
+          <div class="info-item">
+            <p><span>آدرس:</span> تهران، خیابان ولیعصر، کوچه ۱۲، پلاک ۸</p>
+          </div>
+          <div class="info-item">
+            <p><span>تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸</p>
+          </div>
+          <div class="info-item">
+            <p><span>ایمیل:</span> info@laptopshop.com</p>
+          </div>
+          <div class="info-item">
+            <p><span>ساعات کاری:</span> شنبه تا پنج‌شنبه، ۹ صبح تا ۶ عصر</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Section -->
+      <div class="map-section">
+        <h2>موقعیت ما روی نقشه</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.9640904422414!2d51.388973315487215!3d35.68919803872119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e06d1159e64fb%3A0x960a87c7883a580!2z2YXZiNiz2K_Yp9mGINmF2KrZhNin2Kog2KfYsdiv2YEg2K_Yt9mF2YbbjNmH!5e0!3m2!1sen!2s!4v1632826111237!5m2!1sen!2s"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 تمامی حقوق محفوظ است. فروشگاه لپ‌تاپ</p>
+    </footer>
+  </body>
 </html>

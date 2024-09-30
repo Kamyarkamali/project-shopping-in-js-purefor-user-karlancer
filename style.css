@@ -168,6 +168,30 @@ footer {
   cursor: pointer;
 }
 
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.quantity-controls button {
+  border: none;
+  width: 40px;
+  font-size: 14px;
+  background-color: rgb(47, 47, 223);
+  border-radius: 5px;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .cart-item {
   display: flex;
   flex-direction: column;

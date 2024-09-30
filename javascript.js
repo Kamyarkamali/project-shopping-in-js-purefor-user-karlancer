@@ -100,6 +100,11 @@ shoppTag.addEventListener("click", () => {
 
 let cart = [];
 
+// ذخیره سبد خرید در localStorage
+function saveCartToLocalStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 // بارگذاری سبد خرید از localStorage
 function loadCartFromLocalStorage() {
   const storedCart = localStorage.getItem("cart");
@@ -187,6 +192,28 @@ const showAlert = (alert) => {
 // افزودن به سبد خرید
 const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
+addToCartButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    addToCart(products[index]);
+  });
+});
+
+// تابع افزودن محصول به سبد خرید
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // بررسی اینکه آیا محصول قبلا اضافه شده یا نه
+  const existingProduct = cart.find((item) => item.id === product.id);
+
+  if (!existingProduct) {
+    cart.push({ ...product, quantity: 1 });
+  } else {
+    existingProduct.quantity++;
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 // ذخیره سبد خرید در localStorage
 function saveCartToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -202,11 +229,16 @@ addToCartButtons.forEach((button) => {
 
     const productId = button.getAttribute("data-id");
     const selectedProduct = products.find((p) => p.id == productId);
+
+    console.log("محصول انتخاب شده:", selectedProduct); // لاگ برای بررسی
+
     if (!cart.some((p) => p.id == productId)) {
       cart.push({ ...selectedProduct, quantity: 1 });
       updateProductActions(productId);
       displayCart();
       saveCartToLocalStorage();
+    } else {
+      console.log("این محصول در سبد خرید موجود است."); // لاگ برای بررسی
     }
   });
 });
@@ -337,4 +369,37 @@ function displayCart() {
       `;
     cartContainer.innerHTML += cartItem;
   });
+}
+
+const checkLogin = () => {
+  const token = localStorage.getItem("token");
+
+  console.log(token);
+
+  let tagA = document.querySelector(".login");
+
+  console.log(tagA);
+
+  if (token) {
+    tagA.innerHTML = "<a href='/pages/panelUser.html'>پنل کاربری</a>";
+  } else {
+    tagA.innerHTML = "<a href='/pages/login.html'>ثبت نام / ورود</a>";
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  checkLogin();
+});
+
+// Select the modal and close button
+const modal = document.getElementById("productModal");
+const closeModal = document.querySelector(".close");
+
+// Function to open the modal
+function openModal(product) {
+  document.getElementById("modalImage").src = product.image;
+  document.getElementById("modalName").textContent = product.name;
+  document.getElementById("modalPrice").textContent = product.price;
+  document.getElementById("modalDescription").textContent = product.description;
+  modal.style.display = "block"; // Show the modal
 }

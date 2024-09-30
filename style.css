@@ -276,22 +276,6 @@ footer {
   width: 100px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-  }
-
-  .navbar.active ul {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-}
-
 @media (max-width: 768px) {
   .product-card {
     width: 70%;
@@ -301,5 +285,21 @@ footer {
 @media (max-width: 480px) {
   .product-card {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Reduce width on smaller screens */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .close {
+    font-size: 24px; /* Reduce close button size */
+  }
+
+  h3,
+  p {
+    font-size: 16px; /* Adjust font size */
   }
 }

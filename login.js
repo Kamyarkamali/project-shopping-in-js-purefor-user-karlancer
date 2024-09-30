@@ -16,7 +16,7 @@ loginForm.addEventListener("submit", function (e) {
     localStorage.setItem("token", fakeToken);
     localStorage.setItem("email", email);
 
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   } else {
     alert("لطفاً ایمیل و رمز عبور را وارد کنید.");
   }

@@ -41,6 +41,36 @@ body {
   padding: 0;
 }
 
+.increase-btn {
+  border: none;
+  width: 40px;
+  border-radius: 5px;
+  background-color: #0056b3;
+  color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.decrease-btn {
+  border: none;
+  width: 40px;
+  border-radius: 5px;
+  background-color: orange;
+  color: #f4f4f4;
+}
+
+.remove-btn {
+  border: none;
+  width: 40px;
+  border-radius: 5px;
+  background-color: rgb(144, 44, 26);
+  color: #f4f4f4;
+}
+
 .cart-items li {
   display: flex;
   justify-content: space-between;

@@ -374,11 +374,7 @@ function displayCart() {
 const checkLogin = () => {
   const token = localStorage.getItem("token");
 
-  console.log(token);
-
   let tagA = document.querySelector(".login");
-
-  console.log(tagA);
 
   if (token) {
     tagA.innerHTML = "<a href='/pages/panelUser.html'>پنل کاربری</a>";
@@ -387,19 +383,19 @@ const checkLogin = () => {
   }
 };
 
+const checktokenHamburgerMenu = () => {
+  let toke = localStorage.getItem("token");
+
+  let tageA = document.querySelector(".panel");
+
+  if (toke) {
+    tageA.innerHTML = "<a href='/pages/panelUser.html'>پنل کاربری</a>";
+  } else {
+    tageA.innerHTML = "<a href='/pages/login.html'>ثبت نام / ورود</a>";
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   checkLogin();
+  checktokenHamburgerMenu();
 });
-
-// Select the modal and close button
-const modal = document.getElementById("productModal");
-const closeModal = document.querySelector(".close");
-
-// Function to open the modal
-function openModal(product) {
-  document.getElementById("modalImage").src = product.image;
-  document.getElementById("modalName").textContent = product.name;
-  document.getElementById("modalPrice").textContent = product.price;
-  document.getElementById("modalDescription").textContent = product.description;
-  modal.style.display = "block"; // Show the modal
-}

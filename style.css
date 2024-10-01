@@ -276,6 +276,220 @@ footer {
   width: 100px;
 }
 
+/* Styles for customer reviews */
+.reviews {
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.review-content {
+  text-align: left;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Styles for search bar */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px; /* Adjust the max-width as needed */
+}
+
+.search-container input {
+  flex: 1; /* Allow the input to take available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px; /* Round left corners */
+  outline: none;
+  font-size: 16px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Change this to your desired color */
+  border: none;
+  border-radius: 0 5px 5px 0; /* Round right corners */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a transition effect */
+}
+
+.search-container button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.articles {
+  padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.articles h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.articles-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.article-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+}
+
+.article-card h3 {
+  font-size: 18px;
+  margin: 15px 10px 10px;
+}
+
+.article-card p {
+  font-size: 14px;
+  margin: 0 10px 15px;
+  color: #555;
+}
+
+.read-more {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+}
+
+.contact {
+  padding: 40px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: right; /* Align labels to the right */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px;
+  }
+  .navbar {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .search-container {
+    display: none;
+  }
+
+  .form-group label {
+    text-align: center; /* Center align labels on mobile */
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .articles-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media (max-width: 768px) {
   .product-card {
     width: 70%;
